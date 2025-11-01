@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vape Mod Security Lab</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="vapor-effect"></div>
+    <div class="content-box">
+      <h1 class="neon-title">VAPE MOD</h1>
+      <h2 class="subtitle">Security Testing Lab</h2>
+
+      <div class="menu-grid">
+        <a href="/login" class="menu-card">
+          <div class="card-icon">🔐</div>
+          <h3>Login System</h3>
+          <p>Test SQL Injection</p>
+        </a>
+
+        <a href="/search" class="menu-card">
+          <div class="card-icon">🔍</div>
+          <h3>Search Engine</h3>
+          <p>Test XSS Attack</p>
+        </a>
+      </div>
+
+      <div class="info-box">
+        <h4>Vulnerability Test Payloads:</h4>
+        <ul>
+          <li><strong>SQL Injection:</strong> <code>' OR 1=1 --</code></li>
+          <li><strong>XSS:</strong> <code>&lt;script&gt;alert(1)&lt;/script&gt;</code></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

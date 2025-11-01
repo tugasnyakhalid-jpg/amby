@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search - Vape Mod</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="vapor-effect"></div>
+    <div class="content-box">
+      <a href="/" class="back-link">← Kembali</a>
+
+      <h1 class="neon-title">SEARCH</h1>
+      <h2 class="subtitle">XSS Vulnerable</h2>
+
+      <form method="GET" action="/search" class="search-form">
+        <div class="form-group">
+          <input
+            type="text"
+            name="q"
+            placeholder="Cari sesuatu..."
+            value="<%= query %>"
+            class="search-input"
+          >
+          <button type="submit" class="btn-search">CARI</button>
+        </div>
+      </form>
+
+      <% if (query) { %>
+        <div class="search-result">
+          <h3>Hasil pencarian untuk:</h3>
+          <div class="result-display">
+            <%- query %>
+          </div>
+        </div>
+      <% } %>
+
+      <div class="exploit-hint">
+        <h4>Hint untuk Testing:</h4>
+        <p>Coba gunakan payload XSS pada search box:</p>
+        <code>&lt;script&gt;alert('XSS Attack')&lt;/script&gt;</code>
+        <p class="small-text">atau</p>
+        <code>&lt;img src=x onerror=alert('XSS')&gt;</code>
+        <p class="small-text">Output tidak di-sanitasi, langsung di-render ke HTML menggunakan <%- %></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
